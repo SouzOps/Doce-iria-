@@ -1,0 +1,110 @@
+@import url(global.css);
+
+main{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:20px;align-items:start;
+  max-width:1040px;margin:0 auto;padding:32px clamp(16px,4vw,40px) 56px}
+
+/* Resumo: três "pedaços" de chocolate */
+.resumo{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.resumo-item{padding:18px 20px;background:var(--branco);border:1px solid var(--linha);border-radius:6px;
+  box-shadow:inset 0 -4px 0 rgba(90,50,32,.14)}
+.resumo-item .label{margin-bottom:6px;font-size:14px;font-weight:500;color:var(--suave)}
+.resumo-item .valor{font-family:var(--titulo);font-size:clamp(24px,3.4vw,34px);font-weight:700;color:var(--cacau)}
+#totalVendas{color:var(--ok)}
+#totalGastos{color:var(--erro)}
+.valor.pos{color:var(--ok)}
+.valor.neg{color:var(--erro)}
+.resumo-item.lucro{background:var(--cacau);border-color:var(--cacau);box-shadow:inset 0 -4px 0 var(--ouro)}
+.lucro .label{color:var(--ouro-claro)}
+.lucro .valor{color:#fff}
+.lucro .valor.pos{color:#8fe3b2}
+.lucro .valor.neg{color:#ffa9a9}
+
+/* Formulários */
+.card,main>div:last-child{padding:20px;background:var(--branco);border:1px solid var(--linha);border-radius:14px}
+.card{grid-column:1}
+.card h2,.hist-header h2{font-size:18px}
+.card h2{margin-bottom:12px}
+.row{display:flex;gap:8px}
+.btn-venda{background:var(--ok)}
+.btn-venda:hover{background:#25815a}
+.btn-gasto{background:var(--erro)}
+.btn-gasto:hover{background:#c2282f}
+.msg{min-height:18px;margin-top:8px;font-size:13px;font-weight:500}
+
+/* Histórico */
+main>div:last-child{grid-column:2;grid-row:2/span 2}
+.hist-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.btn-clear{padding:6px 12px;background:none;border:1px solid var(--linha);color:var(--suave);font-size:13px;font-weight:500}
+.btn-clear:hover{background:var(--erro-bg);border-color:transparent;color:var(--erro)}
+ul{list-style:none;margin:0;padding:0;max-height:520px;overflow:auto}
+li{display:flex;align-items:center;gap:12px;padding:12px 4px;border-bottom:1px solid var(--linha)}
+li:last-child{border-bottom:0}
+.pill{flex:none;width:10px;height:10px;border-radius:2px}
+.pill.venda{background:var(--ok)}
+.pill.gasto{background:var(--erro)}
+.li-desc{flex:1;font-weight:500}
+.li-hora{font-size:13px;color:var(--suave)}
+.li-val{font-weight:700}
+.li-val.venda{color:var(--ok)}
+.li-val.gasto{color:var(--erro)}
+.del{padding:2px 8px;background:none;color:#b3a699;font-size:20px;line-height:1}
+.del:hover{background:var(--erro-bg);color:var(--erro)}
+.empty{justify-content:center;padding:32px 12px;color:var(--suave);text-align:center}
+
+@media (max-width:820px){
+  main{grid-template-columns:1fr}
+  .card,main>div:last-child{grid-column:1;grid-row:auto}
+  .resumo{grid-template-columns:1fr}
+}
+
+/* ─── Abas Pessoal / Equipe ─── */
+[hidden]{display:none!important}
+.abas-painel{display:flex;gap:6px;max-width:1040px;margin:24px auto -8px;padding:0 clamp(16px,4vw,40px)}
+.tab{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--branco);color:var(--suave);
+  border:1px solid var(--linha);border-radius:10px;font-weight:600}
+.tab:hover{background:var(--branco);border-color:var(--ouro)}
+.tab.ativa{background:var(--cacau);border-color:var(--cacau);color:#fff;box-shadow:0 3px 0 var(--ouro)}
+.badge{min-width:20px;padding:1px 6px;border-radius:10px;background:var(--vermelho);color:#fff;font-size:12px;text-align:center}
+
+/* ─── Aba Equipe ─── */
+main.equipe{grid-template-columns:minmax(0,1fr)}
+.equipe .card{grid-column:1}
+.eq-painel{display:grid;gap:20px}
+.eq-topo{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.eq-topo h2{font-size:26px}
+.eq-duas{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.eq-texto{margin-bottom:14px;color:var(--suave)}
+.eq-aviso{padding:24px;text-align:center;color:var(--suave)}
+.equipe input[type=text]{width:100%;padding:11px 13px;border:1.5px solid var(--linha);border-radius:8px;
+  background:var(--branco);color:var(--texto)}
+.equipe .card ul{max-height:420px}
+.eq-mini{margin-top:6px}
+.eq-mini li{padding:8px 4px;font-size:14px}
+.eq-li{flex-wrap:wrap}
+.eq-pessoa{flex:1;min-width:160px;font-weight:600;overflow-wrap:anywhere}
+.eq-tag{margin-left:6px;padding:1px 8px;border-radius:10px;background:var(--linha);color:var(--suave);font-size:12px;font-weight:500}
+.eq-num{font-size:14px;color:var(--suave)}
+.eq-num b{color:var(--texto)}
+.btn-mini{padding:6px 12px;font-size:13px}
+.btn-mini.sec{background:none;border:1px solid var(--linha);color:var(--suave)}
+.btn-mini.sec:hover{background:var(--erro-bg);border-color:transparent;color:var(--erro)}
+
+@media (max-width:820px){
+  .eq-duas{grid-template-columns:1fr}
+  .eq-topo h2{font-size:22px}
+}
+.eq-duas .card{grid-column:auto}
+.equipe .row button{flex:none;white-space:nowrap}
+.eq-painel{grid-template-columns:minmax(0,1fr)}
+.eq-duas{grid-template-columns:repeat(2,minmax(0,1fr))}
+.equipe .li-val,.equipe .li-hora{white-space:nowrap}
+.equipe .li-desc{min-width:0;overflow-wrap:break-word}
+.eq-tag{white-space:nowrap}
+.equipe .li-hora,.equipe .li-val{flex:none}
+@media (max-width:820px){
+  .eq-duas{grid-template-columns:minmax(0,1fr)}
+  .equipe .li-hora{font-size:12px}
+  #eq-historico li{flex-wrap:wrap;row-gap:2px}
+  #eq-historico .li-desc{flex:1 1 calc(100% - 28px)}
+  #eq-historico .li-hora{margin-left:22px;margin-right:auto}
+}
