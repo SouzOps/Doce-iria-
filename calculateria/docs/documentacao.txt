@@ -2,7 +2,7 @@
 ║         CONTROLE FINANCEIRO DE BROWNIES — DOCUMENTAÇÃO TÉCNICA       ║
 ╚══════════════════════════════════════════════════════════════════════╝
 
-Autor do projeto: (jhou_jhou)
+Autor do projeto: (Evilyn)
 Data: 2026
 
 
